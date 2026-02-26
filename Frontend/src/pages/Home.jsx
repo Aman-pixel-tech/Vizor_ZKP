@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -21,9 +22,9 @@ const Home = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="cursor-pointer bg-white text-indigo-600 font-medium px-8 py-3 rounded-full shadow-lg hover:scale-105 transition">
+          <Link to={'/wallet'} className="cursor-pointer bg-white text-indigo-600 font-medium px-8 py-3 rounded-full shadow-lg hover:scale-105 transition">
             Try Demo
-          </button>
+          </Link>
 
           <button className="cursor-pointer border border-white/40 px-8 py-3 rounded-full hover:bg-white hover:text-indigo-600 transition">
             Learn More

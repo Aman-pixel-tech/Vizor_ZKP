@@ -41,7 +41,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            to="/login"
+            to="/verifier-login"
             className="px-6 py-2 rounded-full bg-white text-indigo-600 font-semibold hover:scale-105 transition"
           >
             Try Demo
