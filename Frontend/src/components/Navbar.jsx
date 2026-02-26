@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center">
+    <div className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center">
       
       <nav className="
         backdrop-blur-xl bg-white/10 
@@ -25,10 +25,7 @@ export default function Navbar() {
         {/* Links */}
         <div className="flex gap-8 items-center text-white font-medium">
           <Link to="/" className="hover:text-indigo-200 transition">Home</Link>
-          <Link to="/how-it-works" className="hover:text-indigo-200 transition">How It Works</Link>
-          <Link to="/features" className="hover:text-indigo-200 transition">Features</Link>
-          <Link to="/security" className="hover:text-indigo-200 transition">Security</Link>
-          <Link to="/use-cases" className="hover:text-indigo-200 transition">Use Cases</Link>
+          
         </div>
 
         {/* Action buttons */}
