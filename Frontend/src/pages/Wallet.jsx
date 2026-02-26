@@ -11,7 +11,6 @@ const [showForm, setShowForm] = useState(false);
   // Generate walletId + load credential
   useEffect(() => {
     let id = localStorage.getItem("walletId");
-   
     if (!id) {
       id = "wallet_" + Math.random().toString(36).substring(2, 10);
       localStorage.setItem("walletId", id);
@@ -40,7 +39,7 @@ const [showForm, setShowForm] = useState(false);
         {/* Wallet ID */}
         <div className="bg-white/10 rounded-xl p-4 mb-6">
           <p className="text-sm opacity-80">Wallet ID</p>
-          <p className="text-lg font-medium">{walletId}</p>
+          <p className="text-lg font-medium">{walletId  ? walletId : "Wallet Id not issued"}</p>
         </div>
 
         {/* 🟡 If NO credential → show only button */}
@@ -92,6 +91,7 @@ const [showForm, setShowForm] = useState(false);
       </div>
    <ModalWrapper isOpen={showForm}>
   <RequestCredentialForm
+  setShowForm= {setShowForm}
     onIssued={(cred) => {
       setCredential(cred);
       setShowForm(false);

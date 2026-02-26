@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-export default function RequestCredentialForm({ onIssued }) {
+import { IoCloseSharp } from "react-icons/io5";
+export default function RequestCredentialForm({ onIssued,setShowForm }) {
   const [loading, setLoading] = useState(false);
 
   const [form, setForm] = useState({
@@ -40,12 +40,12 @@ export default function RequestCredentialForm({ onIssued }) {
       });
 
       const data = await res.json();
-
       localStorage.setItem("credential", JSON.stringify(data));
       onIssued(data);
 
     } catch (err) {
-      alert("Issuer server not running");
+      console.log(err)
+      // alert("Issuer server not running");
     } finally {
       setLoading(false);
     }
@@ -56,6 +56,8 @@ export default function RequestCredentialForm({ onIssued }) {
       onSubmit={requestCredential}
       className="bg-white/10 fixed inset-0 backdrop-blur-xl border border-white/20 rounded-3xl p-8 w-full max-w-xl m-auto"
     >
+      <IoCloseSharp onClick={()=>setShowForm(false)} className="absolute right-4 top-4 cursor-pointer" size={24} />
+      
       <h2 className="text-2xl font-semibold mb-6 text-center">
         Request Digital Credential
       </h2>
